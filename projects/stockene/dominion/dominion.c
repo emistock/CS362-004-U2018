@@ -656,11 +656,10 @@ int play_adventurer(int currentPlayer, struct gameState *state, int temphand[], 
                         drawntreasure++;
                 else{
                         temphand[z]=cardDrawn;
-                        state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
                         z++;
                 }
         }
-        while(z-1>=0) {
+        while(z-1>0) {
                 state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
                 z=z-1;
         }
@@ -671,7 +670,7 @@ int play_adventurer(int currentPlayer, struct gameState *state, int temphand[], 
 int play_smithy(int currentPlayer, struct gameState *state, int handPos, int i)
 {
   //+3 Cards
-  for (i = 0; i < 3; i++)
+  for (i = 0; i <= 3; i++)
   {
           drawCard(currentPlayer, state);
   }
@@ -683,14 +682,14 @@ int play_smithy(int currentPlayer, struct gameState *state, int handPos, int i)
 
 int play_remodel(int currentPlayer, int choice1, int choice2, struct gameState *state, int j, int i, int handPos)
 {
-  j = state->hand[currentPlayer][choice1]; //store card we will trash
+  j = state->hand[currentPlayer][choice2]; //store card we will trash
 
   if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
   {
           return -1;
   }
 
-  gainCard(choice2, state, 0, currentPlayer);
+  gainCard(choice1, state, 0, currentPlayer);
 
   //discard card from hand
   discardCard(handPos, currentPlayer, state, 0);
@@ -715,7 +714,7 @@ int play_village(int currentPlayer, struct gameState *state, int handPos)
   drawCard(currentPlayer, state);
 
   //+2 Actions
-  state->numActions = state->numActions + 2;
+  state->numActions = state->numActions - 2;
 
   //discard played card from hand
   discardCard(handPos, currentPlayer, state, 0);
