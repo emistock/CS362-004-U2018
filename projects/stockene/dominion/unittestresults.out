@@ -1,0 +1,344 @@
+Result for running function unit tests:
+unittest1.c:
+----------------- Testing Function: drawCard() ----------------
+TEST 1: Draw Card From Initial Deck for Player 1 
+New Hand Count = 6, Expected Count = 6
+New Deck Count = 4, Expected Count = 4
+Comparing new hand count to expected hand count...
+-------SUCCESS-------
+Comparing new deck count to expected deck count...
+-------SUCCESS-------
+Checking if card in hand matches card from deck... 
+-------SUCCESS-------
+Checking function output...-------SUCCESS-------
+TEST 2: Draw Card From Initial Deck for Player 2 
+New Hand Count = 1, Expected Count = 1
+New Deck Count = 9, Expected Count = 9
+Comparing new hand count to expected hand count...
+-------SUCCESS-------
+Comparing new deck count to expected deck count...
+-------SUCCESS-------
+Checking if card in hand matches card from deck... 
+-------SUCCESS-------
+Checking function output...
+-------SUCCESS-------
+
+ALL TESTS PASSED: Testing complete drawCard()
+
+File 'dominion.c'
+Lines executed:15.98% of 557
+Branches executed:15.83% of 417
+Taken at least once:12.95% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+----------------- Testing Function: fullDeckCount() ----------------
+TEST 1: Check card counts for player 1 
+Estate Count = 3, Expected Count = 3
+Copper Count = 7, Expected Count = 7
+Comparing estate count to expected estate count...
+-------SUCCESS-------
+Comparing copper count to expected copper count...
+-------SUCCESS-------
+TEST 2: Check card counts for player 2
+Estate Count = 3, Expected Count = 3
+Copper Count = 7, Expected Count = 7
+Comparing estate count to expected estate count...
+-------SUCCESS-------
+Comparing copper count to expected copper count...
+-------SUCCESS-------
+
+ALL TESTS PASSED: Testing complete fullDeckCount()
+
+File 'dominion.c'
+Lines executed:17.41% of 557
+Branches executed:18.23% of 417
+Taken at least once:15.11% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+----------------- Testing Function: discardCard() ----------------
+TEST 1: Player 1, card is not trashed 
+Test player 1 with 1 cards in hand
+Checking hand count...
+Hand Count = 0, expected = 0
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 1 with 2 cards in hand
+Checking hand count...
+Hand Count = 1, expected = 1
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 1 with 3 cards in hand
+Checking hand count...
+Hand Count = 2, expected = 2
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 1 with 4 cards in hand
+Checking hand count...
+Hand Count = 3, expected = 3
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 1 with 5 cards in hand
+Checking hand count...
+Hand Count = 4, expected = 4
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+TEST 2: Player 1, card is trashed
+Test player 1 with 1 cards in hand
+Checking hand count...
+Hand Count = 0, expected = 0
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 1 with 2 cards in hand
+Checking hand count...
+Hand Count = 1, expected = 1
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 1 with 3 cards in hand
+Checking hand count...
+Hand Count = 2, expected = 2
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 1 with 4 cards in hand
+Checking hand count...
+Hand Count = 3, expected = 3
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 1 with 5 cards in hand
+Checking hand count...
+Hand Count = 4, expected = 4
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+TEST 3: Player 2, card is not trashed
+Test player 2 with 1 cards in hand
+Checking hand count...
+Hand Count = 0, expected = 0
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 2 with 2 cards in hand
+Checking hand count...
+Hand Count = 1, expected = 1
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 2 with 3 cards in hand
+Checking hand count...
+Hand Count = 2, expected = 2
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 2 with 4 cards in hand
+Checking hand count...
+Hand Count = 3, expected = 3
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 2 with 5 cards in hand
+Checking hand count...
+Hand Count = 4, expected = 4
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+TEST 4: Player 2, card is trashed
+Test player 2 with 1 cards in hand
+Checking hand count...
+Hand Count = 0, expected = 0
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 2 with 2 cards in hand
+Checking hand count...
+Hand Count = 1, expected = 1
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 2 with 3 cards in hand
+Checking hand count...
+Hand Count = 2, expected = 2
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 2 with 4 cards in hand
+Checking hand count...
+Hand Count = 3, expected = 3
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+Test player 2 with 5 cards in hand
+Checking hand count...
+Hand Count = 4, expected = 4
+-------SUCCESS-------
+Checking play card count...
+-------SUCCESS-------
+
+ALL TESTS PASSED: Testing complete discardCard()
+
+File 'dominion.c'
+Lines executed:18.13% of 557
+Branches executed:17.27% of 417
+Taken at least once:14.15% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+unittest4.c:
+----------------- Testing Function: getCost() ----------------
+Checking card costs...
+Checking curse card cost...
+-------SUCCESS-------
+Checking estate card cost...
+-------SUCCESS-------
+Checking duchy card cost...
+-------SUCCESS-------
+Checking province card cost...
+-------SUCCESS-------
+Checking copper card cost...
+-------SUCCESS-------
+Checking silver card cost...
+-------SUCCESS-------
+Checking gold card cost...
+-------SUCCESS-------
+Checking adventurer card cost...
+-------SUCCESS-------
+Checking council room card cost...
+-------SUCCESS-------
+Checking feast card cost...
+-------SUCCESS-------
+Checking gardens card cost...
+-------SUCCESS-------
+Checking mine card cost...
+-------SUCCESS-------
+Checking remodel card cost...
+-------SUCCESS-------
+Checking smithy card cost...
+-------SUCCESS-------
+Checking village card cost...
+-------SUCCESS-------
+Checking baron card cost...
+-------SUCCESS-------
+Checking great hall card cost...
+-------SUCCESS-------
+Checking minion card cost...
+-------SUCCESS-------
+Checking steward card cost...
+-------SUCCESS-------
+Checking tribute card cost...
+-------SUCCESS-------
+Checking ambassador card cost...
+-------SUCCESS-------
+Checking cutpurse card cost...
+-------SUCCESS-------
+Checking embargo card cost...
+-------SUCCESS-------
+Checking outpost card cost...
+-------SUCCESS-------
+Checking salvager card cost...
+-------SUCCESS-------
+Checking sea hag card cost...
+-------SUCCESS-------
+Checking treasure map card cost...
+-------SUCCESS-------
+
+ALL TESTS PASSED: Testing complete getCost()
+
+File 'dominion.c'
+Lines executed:5.21% of 557
+Branches executed:6.71% of 417
+Taken at least once:6.47% of 417
+Calls executed:0.00% of 95
+Creating 'dominion.c.gcov'
+
+Result for running card unit tests:
+cardtest1.c:
+----------------- Testing Card: adventurer ----------------
+TEST 1: Player 1 uses adventurer card
+New Hand Count = 9, Expected Count = 7
+-------FAIL-------
+TEST 2: Player 2 uses adventurer card
+New Hand Count = 12, Expected Count = 7
+-------FAIL-------
+
+NOT ALL TESTS PASSED: Testing complete adventurer 
+
+File 'dominion.c'
+Lines executed:25.67% of 557
+Branches executed:28.06% of 417
+Taken at least once:18.94% of 417
+Calls executed:14.74% of 95
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+----------------- Testing Card: smithy ----------------
+TEST 1: Player 1 uses smithy card
+New Hand Count = 8, Expected Count = 7
+-------FAIL-------
+TEST 2: Player 2 uses smithy card
+New Hand Count = 8, Expected Count = 7
+-------FAIL-------
+
+NOT ALL TESTS PASSED: Testing complete smithy 
+
+File 'dominion.c'
+Lines executed:25.13% of 557
+Branches executed:26.14% of 417
+Taken at least once:16.31% of 417
+Calls executed:18.95% of 95
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+----------------- Testing Card: remodel ----------------
+TEST 1: Player 1 uses remodel on copper card and tries to replace with estate 
+New Hand Count = 2, Expected Count = 1
+-------FAIL-------
+Checking if card in hand is an estate...
+-------FAIL-------
+TEST 2: Player 2 uses remodel on copper card and tries to replace with estate 
+New Hand Count = 2, Expected Count = 1
+-------FAIL-------
+Checking if card in hand is an estate...
+-------FAIL-------
+
+NOT ALL TESTS PASSED: Testing complete remodel 
+
+File 'dominion.c'
+Lines executed:29.44% of 557
+Branches executed:34.77% of 417
+Taken at least once:18.94% of 417
+Calls executed:21.05% of 95
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+----------------- Testing Card: village ----------------
+TEST 1: Player 1 uses village card
+New Hand Count = 5, Expected Count = 5
+-------SUCCESS-------
+New Action Count = -1, Expected Count = 3
+-------FAIL-------
+TEST 2: Player 2 uses village card 
+New Hand Count = 0, Expected Count = 0
+-------SUCCESS-------
+New Action Count = -1, Expected Count = 3
+-------FAIL-------
+
+NOT ALL TESTS PASSED: Testing complete village 
+
+File 'dominion.c'
+Lines executed:24.24% of 557
+Branches executed:25.66% of 417
+Taken at least once:16.07% of 417
+Calls executed:15.79% of 95
+Creating 'dominion.c.gcov'
+
