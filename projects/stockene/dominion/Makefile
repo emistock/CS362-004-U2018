@@ -24,7 +24,29 @@ testAll: dominion.o testSuite.c
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
-runtests: testDrawCard 
+
+randomtestcard1: dominion.o interface.o
+	gcc -o test1 -g randomtestcard1.c -g dominion.o rngs.o interface.o $(CFLAGS)
+
+	./test1 >> randomtestcard1.out
+	gcov -f -b dominion.c >> randomtestcard1.out
+	cat dominion.c.gcov >> randomtestcard1.out
+
+randomtestcard2: dominion.o interface.o
+	gcc -o test2 -g randomtestcard2.c -g dominion.o rngs.o interface.o $(CFLAGS)
+
+	./test2 >> randomtestcard2.out
+	gcov -f -b dominion.c >> randomtestcard2.out
+	cat dominion.c.gcov >> randomtestcard2.out
+
+randomtestcardadventurer: dominion.o interface.o
+	gcc -o test3 -g randomtestcardadventurer.c -g dominion.o rngs.o interface.o $(CFLAGS)
+
+	./test3 >> randomtestcardadventurer.out
+	gcov -f -b dominion.c >> randomtestcardadventurer.out
+	cat dominion.c.gcov >> randomtestcardadventurer.out
+
+runtests: testDrawCard
 	./testDrawCard &> unittestresult.out
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
@@ -33,7 +55,7 @@ runtests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player 
+all: playdom player
 
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
