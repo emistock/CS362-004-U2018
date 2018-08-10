@@ -21,22 +21,111 @@ public class UrlValidatorTest extends TestCase {
    
    public void testManualTest()
    {
-//You can use this function to implement your manual testing	   
+//You can use this function to implement your manual testing
+	  
 	   
    }
    
    
-   public void testYourFirstPartition()
+   public void testScheme()
    {
-	 //You can use this function to implement your First Partition testing	   
+	   UrlValidator urlTest = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   System.out.println("\nTesting Schemes...");
+	   
+	   
+	   System.out.println("\nExpected True:");
+	   System.out.println(urlTest.isValid("http://www.google.com"));
+	   System.out.println(urlTest.isValid("www.google.com"));
+	   //System.out.println(urlTest.isValid("ftp://www.google.com"));
+	   //System.out.println(urlTest.isValid("https://www.google.com"));
+	   //System.out.println(urlTest.isValid("h3t://www.google.com"));
+	
+	   System.out.println("\nExpected False:");
+	   System.out.println(urlTest.isValid("http//www.google.com"));
+	   System.out.println(urlTest.isValid("http:/www.google.com"));
+	   System.out.println(urlTest.isValid("http/www.google.com"));
+	   System.out.println(urlTest.isValid("http:www.google.com"));
+	   System.out.println(urlTest.isValid(":www.google.com"));
+	   System.out.println(urlTest.isValid(":/www.google.com"));
+	   System.out.println(urlTest.isValid("://http:www.google.com"));
+	   System.out.println(urlTest.isValid("3ht://www.google.com"));
+	   System.out.println(urlTest.isValid("ftp:/www.google.com"));
+	   System.out.println(urlTest.isValid("https:/www.google.com"));
+	   System.out.println(urlTest.isValid("h3t:/www.google.com"));
 
    }
    
-   public void testYourSecondPartition(){
-		 //You can use this function to implement your Second Partition testing	   
+   public void testHost()
+   {
+	   UrlValidator urlTest = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   System.out.println("\nTesting Hosts...");
+	   
+	   System.out.println("\nExpected True:");
+	   System.out.println(urlTest.isValid("http://www.google.com"));
+	   System.out.println(urlTest.isValid("http://google.com"));
+	   System.out.println(urlTest.isValid("http://google.au"));
+	   System.out.println(urlTest.isValid("http://123.com"));
+	   System.out.println(urlTest.isValid("http://0.0.0.0"));
+	   System.out.println(urlTest.isValid("http://www.google.com:80"));
+	   System.out.println(urlTest.isValid("http://www.google.com:0"));
+	   System.out.println(urlTest.isValid("http://255.255.255.255"));
+	   
+	   
+	
+	   System.out.println("\nExpected False:");
+	   System.out.println(urlTest.isValid("http://"));
+	   System.out.println(urlTest.isValid("http://google."));
+	   System.out.println(urlTest.isValid("http://."));
+	   System.out.println(urlTest.isValid("http://.com"));
+	   System.out.println(urlTest.isValid("http://google.c"));
+	   System.out.println(urlTest.isValid("http://google"));
+	   System.out.println(urlTest.isValid("http://google.com:-1"));
+	   System.out.println(urlTest.isValid("http://google.com:0a"));
+	   System.out.println(urlTest.isValid("http://256.256.256.256"));
+	   
 
    }
-   //You need to create more test cases for your Partitions if you need to 
+   
+   public void testPath()
+   {
+	   UrlValidator urlTest = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   System.out.println("\nTesting Paths...");
+	   
+	   System.out.println("\nExpected True:");
+	   System.out.println(urlTest.isValid("http://www.google.com/test/")); 
+	   System.out.println(urlTest.isValid("http://www.google.com/test")); 
+	   System.out.println(urlTest.isValid("http://www.google.com/test123")); 
+	   System.out.println(urlTest.isValid("http://www.google.com/test/test")); 
+	   System.out.println(urlTest.isValid("http://www.google.com/$123")); 
+	   System.out.println(urlTest.isValid("http://www.google.com/$123/")); 
+	   System.out.println(urlTest.isValid("http://www.google.com/$123/test"));
+	   System.out.println(urlTest.isValid("http://www.google.com/test//test"));
+	   
+	   System.out.println("\nExpected False:");
+	   System.out.println(urlTest.isValid("http://www.google.com/#test"));
+	   System.out.println(urlTest.isValid("http://www.google.com/#"));
+	   System.out.println(urlTest.isValid("http://www.google.com/.."));
+	   System.out.println(urlTest.isValid("http://www.google.com/../"));
+	   System.out.println(urlTest.isValid("http://www.google.com/$123/test"));
+	   System.out.println(urlTest.isValid("http://www.google.com/../test"));
+
+   }
+   
+   public void testQuery()
+   {
+	   UrlValidator urlTest = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   System.out.println("\nTesting Queries...");
+	   
+	   System.out.println("\nExpected True:");
+	   System.out.println(urlTest.isValid("http://www.google.com"));
+	   System.out.println(urlTest.isValid("http://www.google.com?test=test")); 
+	   System.out.println(urlTest.isValid("http://www.google.com?test=test&test=test"));
+   }
+ 
    
    public void testIsValid()
    {
